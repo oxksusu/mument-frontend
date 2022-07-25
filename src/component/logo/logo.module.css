@@ -1,0 +1,35 @@
+@import url('http://fonts.cdnfonts.com/css/bayberry');
+
+
+
+  .logoStyle {
+    /* Logo */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 10px;
+
+    position: absolute;
+    width: 250px;
+    height: 80px;
+    left: 10rem;
+    top: 0;
+
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.1));
+
+    /* mument. */
+
+    font-family: 'Bayberry', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 86px;
+    text-align: center;
+
+    color: #000000;
+
+}

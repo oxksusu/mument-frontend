@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.loginBtn {
+    /* 로그인 */
+
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+
+    position: absolute;
+    width: 8rem;
+    height: 4rem;
+    right: 15rem;
+    top: 4rem;
+
+    background: rgba(83, 190, 146, 0.6);
+    border-radius: 30px;
+}
+.loginBtn:hover {
+    background: #53BE92;
+    transform: translateY(-0.1rem);
+    transition: all 0.5s;
+}
+
+.loginBtnText {
+    width: 8rem;
+    height: 4rem;
+
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 2rem;
+
+    color: #FFFFFF;
+}
