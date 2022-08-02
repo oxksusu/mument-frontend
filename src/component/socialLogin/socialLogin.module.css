@@ -1,0 +1,14 @@
+
+.google {
+    width: 20rem;
+    height: 4rem;
+    background: dodgerblue;
+    color: #FFFFFF;
+}
+
+.kakao {
+    width: 20rem;
+    height: 4rem;
+    background: #FEE500;
+    color: black;
+}

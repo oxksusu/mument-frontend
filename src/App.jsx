@@ -1,15 +1,16 @@
-import {Suspense, lazy, Component} from "react";
-import Header from "./component/header/Header";
+import React, { Suspense, lazy } from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Main from "./component/page/main/main";
 
-class App extends Component {
+function App() {
+    return(
+        <BrowserRouter>
+            <Routes>
 
-    render() {
-        return (
-            <div>
-                <Header />
-            </div>
-        )
-    }
+                <Route path={"/"} element={<Main />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App;

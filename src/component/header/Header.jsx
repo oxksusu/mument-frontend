@@ -5,7 +5,7 @@ import LoginBtn from "../loginBtn/LoginBtn";
 import SubmitBtn from "../SubmitBtn/SubmitBtn";
 
 
-const Header = ({children}) => {
+const Header = () => {
 
     return (
         <header className={styles.positioner}>

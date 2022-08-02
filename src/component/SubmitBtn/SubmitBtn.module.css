@@ -25,6 +25,8 @@
 
     background: #F1F1F1;
     border-radius: 30px;
+    border: 0;
+    outline: 0;
 
 }
 .SubmitBtn:hover {
@@ -36,6 +38,7 @@
 .SubmitBtnText {
     width: 10rem;
     height: 4rem;
+    color: black;
 
     font-family: 'GmarketSansMedium', sans-serif;
     font-style: normal;

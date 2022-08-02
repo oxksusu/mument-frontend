@@ -4,7 +4,7 @@ const Logo = () => {
 
     return(
         <div>
-            <a href="/Users/susu/Documents/code/mument/mument-frontend/public">
+            <a href="/">
                 <h1 className={styles.logoStyle}>mument.</h1>
             </a>
         </div>

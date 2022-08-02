@@ -1,9 +1,8 @@
 import Modal from "react-modal";
 import {useDispatch, useSelector} from "react-redux";
-import {setLoginModalVisible} from '../../store/login';
-import styles from './LoginModal.module.css';
-import KakaoBtn from "../../socialLogin/kakao/kakaoBtn";
-import GoogleBtn from "../../socialLogin/google/GoogleBtn";
+import {setUploadModalVisible} from "../../store/upload";
+import styles from './UploadModal.module.css';
+import {useState} from "react";
 
 const customStyles = {
     content: {
@@ -15,42 +14,44 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        backgroundColor: 'rgb(243,244,245)',
         borderRadius: '2rem'
     },
 };
 
-function LoginModal() {
+/*
+
+Upload 모달에서도 isOpen이 modalVisible이므로
+Upload 모달의 state 관리 리덕스 만들고 나서 수정해주자
+
+*/
+
+function UploadModal() {
     const dispatch = useDispatch();
-    const loginModalVisible = useSelector(state => state.login.loginModalVisible);
+    const uploadModalVisible = useSelector(state => state.upload.uploadModalVisible);
+    const [uploadState, setState] = useState(true);
 
     function afterOpenModal() {
         // 배경 뿌옇게 만들고 싶음...!!
     }
 
     function closeModal() {
-        dispatch(setLoginModalVisible(false));
+        dispatch(setUploadModalVisible(false));
     }
 
 
     return (
         <div>
             <Modal
-                isOpen={loginModalVisible}
+                isOpen={uploadModalVisible}
                 onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
-                contentLabel="Login"
+                contentLabel="Upload"
             >
                 <div className={styles.greetingText}>
-                    <div>환영합니다!</div>
-                    <div>로그인하시면 더 많은 기능을 이용하실 수 있어요.</div>
+                    <div>영상 등록하기</div>
 
-                </div>
-                <div className={styles.center}>
-                    <KakaoBtn />
-                    <GoogleBtn />
                 </div>
                 <div className={styles.bottom}>
                     <button className={styles.closeBtn} onClick={closeModal}>닫기</button>
@@ -60,4 +61,4 @@ function LoginModal() {
     );
 }
 
-export default LoginModal;
+export default UploadModal;

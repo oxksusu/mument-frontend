@@ -25,6 +25,8 @@
 
     background: rgba(83, 190, 146, 0.6);
     border-radius: 30px;
+    border: 0;
+    outline: 0;
 }
 .loginBtn:hover {
     background: #53BE92;
