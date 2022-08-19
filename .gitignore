@@ -24,4 +24,4 @@ yarn-error.log*
 
 # security
 .env
-src/service/data
+/data
