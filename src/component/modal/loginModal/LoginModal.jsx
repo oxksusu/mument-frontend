@@ -4,6 +4,28 @@ import {setLoginModalVisible} from '../../store/login';
 import styles from './LoginModal.module.css';
 import KakaoBtn from "../../socialLogin/kakao/kakaoBtn";
 import GoogleBtn from "../../socialLogin/google/GoogleBtn";
+import {SocialLoginContainer} from "../container/SocialLoginContainer";
+import {SetNicknameContainer} from "../container/SetNicknameContainer";
+import {SetImageContainer} from "../container/SetImageContainer";
+import {CheckContainer} from "../container/CheckContainer";
+
+/*
+
+로그인 모달창
+
+로그인 시도시 가입된 유저면 모달을 닫고,
+미가입 유저는 회원가입을 진행하도록.
+
+stage : 로그인 단계를 숫자로 할당
+
+*/
+
+const stage = {
+    SOCIAL_LOGIN:1,
+    SET_NICKNAME:2,
+    SET_IMAGE:3,
+    SIGN_UP_END:4,
+}
 
 const customStyles = {
     content: {
@@ -15,17 +37,41 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        backgroundColor: 'rgb(243,244,245)',
-        borderRadius: '2rem'
+        borderRadius: '2rem',
     },
 };
 
 function LoginModal() {
     const dispatch = useDispatch();
     const loginModalVisible = useSelector(state => state.login.loginModalVisible);
+    const loginStep = useSelector((state) => state.login.loginStep);
+
+    /*
+
+    loginStep
+
+    loginStep 의 state 에 따라 다른 컴포넌트를 렌더링하게 케이스 분리했습니다.
+
+
+    */
+    const renderByLoginStep = (loginStep) => {
+        switch (loginStep) {
+            case stage.SOCIAL_LOGIN:
+                return <SocialLoginContainer />;
+            case stage.SET_NICKNAME:
+                return <SetNicknameContainer />;
+            case stage.SET_IMAGE:
+                return <SetImageContainer />;
+            case stage.SIGN_UP_END:
+                return <CheckContainer closeModal={closeModal}/>;
+
+            default:
+                return <div></div>;
+        }
+    }
 
     function afterOpenModal() {
-        // 배경 뿌옇게 만들고 싶음...!!
+        /* 흠.. 이 자리에 뭘 넣어야 할까 */
     }
 
     function closeModal() {
@@ -37,24 +83,12 @@ function LoginModal() {
         <div>
             <Modal
                 isOpen={loginModalVisible}
-                onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
                 ariaHideApp={false}
                 contentLabel="Login"
             >
-                <div className={styles.greetingText}>
-                    <div>환영합니다!</div>
-                    <div>로그인하시면 더 많은 기능을 이용하실 수 있어요.</div>
-
-                </div>
-                <div className={styles.center}>
-                    <KakaoBtn />
-                    <GoogleBtn />
-                </div>
-                <div className={styles.bottom}>
-                    <button className={styles.closeBtn} onClick={closeModal}>닫기</button>
-                </div>
+                <div>{renderByLoginStep(loginStep)}</div>
             </Modal>
         </div>
     );

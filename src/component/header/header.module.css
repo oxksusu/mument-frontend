@@ -22,3 +22,25 @@
     top: 0;
     width: 100%;
 }
+
+.closeBtn {
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 50%;
+    background: rgb(213, 213, 213);
+    margin: 3rem 0 1rem 0;
+}
+.closeBtn:hover {
+    background: #a9a9a9;
+    transform: translateY(-0.1rem);
+    transition: all 0.5s;
+}
+button:active {
+
+    box-shadow: inset -.2rem -.1rem 1.4rem  #FBFBFB, inset .2rem .3rem .5rem #BEC5D0;
+    cursor: pointer;
+
+}
+

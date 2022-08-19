@@ -1,14 +1,14 @@
 import styles from '../socialLogin.module.css';
-import kakao from '../../../img/social/kakao.png'
+import {KAKAO_AUTH_URL} from "../../../service/data/kakao";
 
 const KakaoBtn = () => {
 
     return(
         <>
             <div>
-                <button className={styles.kakao} type={"submit"} name={"kakao"}>
-                    카카오 로그인
-                </button>
+                <a href={KAKAO_AUTH_URL}>
+                    <img className={styles.btnImg} alt="카카오로그인" src={"img/social/kakao.png"} />
+                </a>
             </div>
         </>
     )

@@ -1,11 +1,4 @@
 
-.greetingText {
-    font-family: "GmarketSansMedium", sans-serif;
-    text-align: center;
-    font-size: 2rem;
-    margin: 4rem 0 3rem 0;
-}
-
 .center {
     text-align: center;
     align-items: center;
@@ -19,9 +12,9 @@
     margin: 3rem 0 3rem 0;
 }
 
-.closeBtn {
-    background: transparent;
-    color: black;
-    font-size: 1.5rem;
-    padding: 1rem 2rem 1rem 2rem;
+button:active {
+
+    box-shadow: inset -.2rem -.1rem 1.4rem  #FBFBFB, inset .2rem .3rem .5rem #BEC5D0;
+    cursor: pointer;
+
 }

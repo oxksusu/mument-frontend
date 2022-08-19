@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Main from "./component/page/main/main";
 
 function App() {
+
     return(
         <BrowserRouter>
             <Routes>

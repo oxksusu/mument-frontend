@@ -1,6 +1,10 @@
 @import url('http://fonts.cdnfonts.com/css/bayberry');
 
 
+.logoSize {
+  width: 23rem;
+  margin: 0 0 0 5rem;
+}
 
   .logoStyle {
     /* Logo */

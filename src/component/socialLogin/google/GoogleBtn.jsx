@@ -1,11 +1,14 @@
 import styles from '../socialLogin.module.css';
+import {GOOGLE_AUTH_URL} from "../../../service/data/google";
 
 const GoogleBtn = () => {
 
     return(
         <>
             <div>
-                <button className={styles.google} type={"submit"} name={"google"}>구글 로그인</button>
+                <a href={GOOGLE_AUTH_URL}>
+                    <img className={styles.btnImg} alt={"구글로그인"} src={"img/social/google.png"} />
+                </a>
             </div>
         </>
     )

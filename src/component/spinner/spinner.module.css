@@ -1,0 +1,52 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes text {
+    0% {
+        color: black;
+    }
+
+    50% {
+        color: #53be92;
+        font-size: 2rem;
+    }
+    100% {
+        color: black;
+    }
+
+}
+
+.wrapper {
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    font-family: 'GmarketSansMedium', sans-serif;
+    font-size: 1.5rem;
+}
+
+.smaller {
+    font-size: 1.5rem;
+    margin-right: 0.4rem;
+}
+
+.bigger {
+    color: #53be92;
+    font-weight: bolder;
+    animation: text 2s infinite;
+}
+
+.spinner {
+    margin: 2rem auto;
+    width: 5rem;
+    height: 5rem;
+    border: 2rem solid rgba(163,151,198,0.2);
+    border-top: 2rem solid rgba(83, 190, 146, 0.7);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}

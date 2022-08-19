@@ -5,7 +5,7 @@ const Logo = () => {
     return(
         <div>
             <a href="/">
-                <h1 className={styles.logoStyle}>mument.</h1>
+                <img className={styles.logoSize} alt={"logo"} src={"img/logo/logo.png"} />
             </a>
         </div>
     )

@@ -1,14 +1,18 @@
 
 .google {
-    width: 20rem;
+    width: 14rem;
     height: 4rem;
     background: dodgerblue;
     color: #FFFFFF;
 }
 
 .kakao {
-    width: 20rem;
+    width: 14rem;
     height: 4rem;
     background: #FEE500;
     color: black;
+}
+
+.btnImg {
+    width: 25rem;
 }
