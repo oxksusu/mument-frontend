@@ -8,23 +8,16 @@ import {PrevStepBtn} from "./stepBtn/PrevStepBtn";
 
 export const SetImageContainer = () => {
 
+    const [profile, setProfile] = useState("img/social/auth_logo.png");
     const dispatch = useDispatch();
-    const prevStepHandler = async() => {
 
-        dispatch(loginPrevStep());
-    }
-
-    const nextStepHandler = async() => {
-
-        dispatch(loginNextStep());
-    }
+    const prevStepHandler = async() => { dispatch(loginPrevStep()); }
+    const nextStepHandler = async() => { dispatch(loginNextStep()); }
     /*
     미리보기 기능 => useState 사용 + 미리보기 대기 중 스피너도 추가할 것
 
     state -> src 로 관리할 것인가?
     */
-    const [profile, setProfile] = useState("img/social/preview.png");
-    const [loading, setLoading] = useState(false);
 
     /*
     파일 업로드 기본 버튼을 hidden 으로 숨기고,

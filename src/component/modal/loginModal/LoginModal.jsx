@@ -1,9 +1,6 @@
 import Modal from "react-modal";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoginModalVisible} from '../../store/login';
-import styles from './LoginModal.module.css';
-import KakaoBtn from "../../socialLogin/kakao/kakaoBtn";
-import GoogleBtn from "../../socialLogin/google/GoogleBtn";
 import {SocialLoginContainer} from "../container/SocialLoginContainer";
 import {SetNicknameContainer} from "../container/SetNicknameContainer";
 import {SetImageContainer} from "../container/SetImageContainer";
