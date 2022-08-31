@@ -1,8 +1,9 @@
-import styles from "./container.module.css"
-import KakaoBtn from "../../socialLogin/kakao/kakaoBtn";
-import GoogleBtn from "../../socialLogin/google/GoogleBtn";
+import styles from "../container.module.css"
+import KakaoBtn from "../../../socialLogin/kakao/kakaoBtn";
+import GoogleBtn from "../../../socialLogin/google/GoogleBtn";
 import {useDispatch} from "react-redux";
-import {setLoginModalVisible} from "../../store/login";
+import {setLoginModalVisible} from "../../../store/login";
+import {BtnContainer} from "../BtnContainer";
 
 export const SocialLoginContainer = () => {
 
@@ -24,8 +25,7 @@ export const SocialLoginContainer = () => {
                             </div>
                             <div style={{fontSize:"1.5rem", marginBottom:"1rem"}}>로그인하시면 더 많은 기능을 이용하실 수 있어요.</div>
                         </div>
-                        <KakaoBtn />
-                        <GoogleBtn />
+                        <BtnContainer />
                         <button onClick={closeModal} className={styles.closeBtn}>X</button>
                     </div>
 

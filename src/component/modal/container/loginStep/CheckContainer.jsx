@@ -1,7 +1,24 @@
-import styles from './container.module.css';
+import styles from '../container.module.css';
 import {Checked} from "./Checked";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {accountSignup} from "../../../store/account";
 
 export const CheckContainer = ({closeModal}) => {
+
+    const dispatch = useDispatch();
+    const login = useSelector(state => state.login);
+    const accountInfo = {
+        kakaoAccessToken: login.kakaoAccessToken,
+        email: login.email,
+        accountName: login.accountName,
+        picture: login.picture,
+    };
+    console.log(accountInfo);
+
+    useEffect(() => {
+        dispatch(accountSignup(accountInfo));
+    },[accountInfo]); //한번만 실행되게 빈배열 추가
 
     return(
         <>

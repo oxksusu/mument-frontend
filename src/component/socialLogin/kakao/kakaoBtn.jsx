@@ -1,6 +1,7 @@
 import styles from '../socialLogin.module.css';
 import {KAKAO_AUTH_URL} from "../../../service/data/kakao";
-import {Auth} from "../../../service/test";
+import {useDispatch} from "react-redux";
+import {fetchAccountById} from "../../store/account";
 
 const KakaoBtn = () => {
 

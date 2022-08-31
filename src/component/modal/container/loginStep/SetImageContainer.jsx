@@ -1,18 +1,25 @@
-import styles from './container.module.css';
+import styles from '../container.module.css';
 import {useRef, useState} from "react";
-import {server} from "../../../service/Server";
-import {loginNextStep, loginPrevStep} from "../../store/login";
-import {useDispatch} from "react-redux";
-import {NextStepBtn} from "./stepBtn/NextStepBtn";
-import {PrevStepBtn} from "./stepBtn/PrevStepBtn";
+import {server} from "../../../../service/Server";
+import {loginNextStep, loginPrevStep, setSignup} from "../../../store/login";
+import {useDispatch, useSelector} from "react-redux";
+import {NextStepBtn} from "../stepBtn/NextStepBtn";
+import {PrevStepBtn} from "../stepBtn/PrevStepBtn";
 
 export const SetImageContainer = () => {
 
-    const [profile, setProfile] = useState("img/social/auth_logo.png");
+    //확인용
+    const info = useSelector(state => state.login);
+    console.log(info);
+
+    const [profile, setProfile] = useState("img/social/preview.png");
     const dispatch = useDispatch();
 
     const prevStepHandler = async() => { dispatch(loginPrevStep()); }
-    const nextStepHandler = async() => { dispatch(loginNextStep()); }
+    const nextStepHandler = async() => {
+        await dispatch(setSignup({key: "picture", value: profile}));
+        dispatch(loginNextStep());
+    }
     /*
     미리보기 기능 => useState 사용 + 미리보기 대기 중 스피너도 추가할 것
 
@@ -36,10 +43,9 @@ export const SetImageContainer = () => {
 
      */
     const imgHandler = async (e:any) => {
-        setProfile(URL.createObjectURL(e.target.files[0]));
-        const formData = new FormData();
-        formData.append('file', e.target.files[0]);
-        const response = await server.post('/signup/profile', formData);
+        await (setProfile(URL.createObjectURL(e.target.files[0])));
+        // const formData = new FormData();
+        // formData.append('file', e.target.files[0]);
     }
 
     return(

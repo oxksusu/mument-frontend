@@ -1,10 +1,10 @@
 import Modal from "react-modal";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoginModalVisible} from '../../store/login';
-import {SocialLoginContainer} from "../container/SocialLoginContainer";
-import {SetNicknameContainer} from "../container/SetNicknameContainer";
-import {SetImageContainer} from "../container/SetImageContainer";
-import {CheckContainer} from "../container/CheckContainer";
+import {SocialLoginContainer} from "../container/loginStep/SocialLoginContainer";
+import {SetNicknameContainer} from "../container/loginStep/SetNicknameContainer";
+import {SetImageContainer} from "../container/loginStep/SetImageContainer";
+import {CheckContainer} from "../container/loginStep/CheckContainer";
 
 /*
 

@@ -10,7 +10,10 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     loginModalVisible: false,
     loginStep: 1,
-    id: undefined
+    email: undefined,
+    accountName: undefined,
+    picture: undefined,
+    kakaoAccessToken: undefined,
 }
 
 const login = createSlice({
@@ -30,7 +33,7 @@ const login = createSlice({
             loginStep: state.loginStep - 1,
         }),
         loginResetStep: () => initialState,
-        loginUserInput: (state, { payload: { key, value } }) => ({
+        setSignup: (state, { payload: { key, value } }) => ({
             ...state,
             [key]: value,
         })
@@ -38,5 +41,5 @@ const login = createSlice({
 });
 
 
-export const { setLoginModalVisible, loginNextStep, loginPrevStep, loginResetStep, loginUserInput } = login.actions;
+export const { setLoginModalVisible, loginNextStep, loginPrevStep, loginResetStep, setSignup } = login.actions;
 export default login.reducer;
